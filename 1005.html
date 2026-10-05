@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>1005-CSS容器設定</title>
+
+
+        <style>
+        /* 容器 BOX
+            box-sizing: 預設是 content-box , 也可以改成border-box
+
+            由內而外事 content內容(寬高)/padding填充/border框線/margin邊界
+            除了內容,分別可以設定 上top 又right 下bottom 左left 
+            框線再分 粗細(width) 樣式(style) 顏色(color)
+            框線常見樣式 solid實線 dashed虛線 dotted點點 double雙線 
+            transparent 透明
+            border-radius: 圓角矩形的半徑
+            */
+
+            #d1{
+               width: 100px;
+               height: 100px;
+               background-color: aqua;
+               border: 7px solid black;
+               /* border-color: red yellow green blue;
+               border-width: 5px;
+               border-style: solid/dashed/dotted/double; */
+               padding: 10px; 
+               box-sizing: border-box; 
+               margin-bottom: 10px;
+            }
+            #d2{
+                border: 1px solid black;
+                height: 150px;
+                width: 300px;
+                margin: 20px;
+                border-radius: 75px;/*絕對單位*/
+            }
+            #d3{
+                border: 1px solid black;
+                height: 150px;
+                width: 300px;
+                margin: 50px;
+                border-radius: 75%;/*相對單位*/
+            }
+             #d4{
+                border: 50px solid black;
+                height: 50px;
+                width: 50px;
+                margin: 50px;
+                border-color: red yellow green blue;
+            }
+            #d5{
+                border: 50px solid black;
+                height: 50px;
+                width: 50px;
+                margin: 0px 50px 0px 50px;
+                border-color: white white green white;
+                border-width: 50px;
+            }
+             #d6{
+                border: 50px solid black;
+                height: 0px;
+                width: 0px;
+                margin: 0px 0px 0px 50px;
+                border-color:green white white  white;
+                border-width: 75px; 
+            }
+            #d7{
+                border: 50px solid black;
+                height: 0px;
+                width: 0px;
+                margin: 0px 50px 0px 50px;
+                border-color: white white green white;
+                border-width: 50px;
+            }
+            #d8{
+                border: 50px solid black;
+                height: 50px;
+                width: 50px;
+                margin: 0px 0px 0px 50px;
+                border-color: white white green white;
+                border-width: 0px 50px 50px 50px;
+            }
+            #d9{
+                border: 50px solid black;
+                height: 150px;
+                width: 150px;
+                margin: 0px 50px 0px 50px;
+                border-width: 0px 0px 50px 0px;
+            }
+            #d10{
+               width: 50px;
+               height: 50px;
+               background-color: brown;
+               margin-left:100px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <hr>
+        <div id="d5"></div>
+        <div id="d6"></div>
+        <hr>
+        <div id="d7"></div>
+        <div id="d8"></div>
+        <div id="d9"></div>
+        <div id="d10"></div>
+    </body>
+
+
+</html>
