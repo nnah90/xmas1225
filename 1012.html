@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>1012-CSS漸層與動畫</title>
+        <style>
+        div {
+            width: 200px;
+            height: 100px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        #d1 {/*線性漸層*/
+            background-image: linear-gradient(90deg,red,orange);
+        }
+        #d2 {/*方向0-360deg,顏色用逗號隔開*/
+            background-image: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet);
+        }
+        #d3 {/*輻射漸層*/
+            height: 200px;
+            background-image: radial-gradient(yellow,white,black)
+        }
+        #d4 {/*預設會隨容器改變形狀,第一個參數設定circle可強制為圓形*/
+            background-image: radial-gradient(circle,yellow,white,black)
+        }
+        #d5 {/*圓錐漸層*/
+            background-image: conic-gradient(red,blue,green,red);
+        }
+        #d6 {/*第一個參數可調整起始位置*/
+            background-image: conic-gradient(from 90deg,red,blue,green,red);
+        }
+        /*顏色後加百分比表位置,0起點100終點*/
+        #d7 {
+            background-image:linear-gradient(90deg,red 25%,white 30%,white 70%,blue 70%);
+        }
+        #d8 {
+            background-image: radial-gradient(circle,red 33%,white 33%,white 70%,blue 70%);
+        }
+        #d9 {
+            background-image: conic-gradient(red 33%,white 33%,white 70%,blue 70%);
+        }
+        /*重複間隔頭尾顏色相同較自然*/
+        #d10 {
+            background-image:repeating-linear-gradient(45deg,red 35%,white 40%,red 45%);
+        }
+        #d11 {
+            background-image: repeating-radial-gradient(circle,red 30%,white 35%,red 40%);
+        }
+        #d12 {
+            background-image: repeating-conic-gradient(red 30%,white 35%,red 40%);
+        }
+        /*動畫 */
+        @keyframes k1{
+            0%{ background-image: linear-gradient(90deg,red,white 50%, blue); }
+            7%{ background-image: linear-gradient(90deg,red,white 40%, blue); }
+            18%{ background-image: linear-gradient(90deg,red,white 30%, blue); }
+            29%{ background-image: linear-gradient(90deg,red,white 20%, blue); }
+            41%{ background-image: linear-gradient(90deg,red,white 30%, blue); }
+            50%{ background-image: linear-gradient(90deg,red,white 40%, blue); }
+            67%{ background-image: linear-gradient(90deg,red,white 50%, blue); }
+            75%{ background-image: linear-gradient(90deg,red,white 60%, blue); }
+            84%{ background-image: linear-gradient(90deg,red,white 70%, blue); }
+            92%{ background-image: linear-gradient(90deg,red,white 60%, blue); }
+            100%{ background-image: linear-gradient(90deg,red,white 50%, blue); }
+
+        }
+        #a1 {/*動畫名稱 播一組要多久 要播幾次 線性速度*/
+            animation: k1 1s infinite linear;
+        }
+        @keyframes k2{
+            0%{ background-image: linear-gradient(0deg,red, blue); }
+            8%{ background-image: linear-gradient(30deg,red, blue); }
+            16%{ background-image: linear-gradient(60deg,red, blue); }
+            25%{ background-image: linear-gradient(90deg,red, blue); }
+            33%{ background-image: linear-gradient(120deg,red, blue); }
+            42%{ background-image: linear-gradient(150deg,red, blue); }
+            50%{ background-image: linear-gradient(180deg,red, blue); }
+            58%{ background-image: linear-gradient(210deg,red, blue); }
+            67%{ background-image: linear-gradient(240deg,red, blue); }
+            75%{ background-image: linear-gradient(270deg,red, blue); }
+            83%{ background-image: linear-gradient(300deg,red, blue); }
+            92%{ background-image: linear-gradient(330deg,red, blue); }
+            100%{ background-image: linear-gradient(360deg,red, blue); }
+
+
+        }
+        #a2 {
+            animation: k2 1s infinite linear;
+        }
+        @keyframes k3{
+           0% {background: radial-gradient(circle,yellow,white 50%,black);}
+           25% {background: radial-gradient(circle,yellow,white 60%,black);}
+           50% {background: radial-gradient(circle,yellow,white 70% ,black);}
+           75% {background: radial-gradient(circle,yellow,white 60%,black);}
+           100% {background: radial-gradient(circle,yellow,white 50%,black);}
+
+        }
+        #a3 {
+            animation: k3 1s infinite linear;
+        }
+        @keyframes k4{
+           0% {background:repeating-linear-gradient(45deg,red 35%,white 40%,red 45%);}
+           50% {background:repeating-linear-gradient(45deg,white 35%,red 40%,white 45%);}
+           100% {background:repeating-linear-gradient(45deg,red 35%,white 40%,red 45%);}
+        }
+        #a4 {
+            animation: k4 1s infinite linear paused;
+        }
+        @keyframes k5{
+           0% {background:repeating-radial-gradient(circle,red 35%,white 40%,red 45%);}
+           50% {background:repeating-radial-gradient(circle,white 35%,red 40%,white 45%);}
+           100% {background:repeating-radial-gradient(circle,red 35%,white 40%,red 45%);}
+        }
+        #a5 {
+            animation: k5 0.4s infinite linear running;
+        }
+        @keyframes k6{
+           0% {background:repeating-conic-gradient(red 35%,white 40%,red 45%);}
+           50% {background:repeating-conic-gradient(white 35%,red 40%,white 45%);}
+           100% {background:repeating-conic-gradient(red 35%,white 40%,red 45%);}
+        }
+        #a6 {
+            animation: k6 0.4s infinite linear;
+        }
+        </style>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+<div id="d6"></div>
+<div id="d7"></div>
+<div id="d8"></div>
+<div id="d9"></div>
+<div id="d10"></div>
+<div id="d11"></div>
+<div id="d12"></div>
+<hr>
+<div id="a1"></div>
+<div id="a2"></div>
+<div id="a3"></div>
+<div id="a4"></div>
+<div id="a5"></div>
+<div id="a6"></div>
+</body>
+
+</html>
